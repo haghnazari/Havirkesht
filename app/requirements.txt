@@ -2,4 +2,4 @@ fastapi[standard]
 SQLAlchemy==2.0.44
 pydantic==2.12.5
 fastapi-pagination==0.15.0
-psycopg2-binary==2.9.11
+psycopg2-binary==2.9.11PyJWT == 2.10.1
