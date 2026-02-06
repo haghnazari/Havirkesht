@@ -3,7 +3,7 @@ from fastapi import Depends
 from sqlalchemy import create_engine, select
 from sqlalchemy.orm import Session, sessionmaker, declarative_base
 
-DATABASE_URL = "postgresql://saeed:123456@localhost:5432/havirkesht_db"
+DATABASE_URL = "postgresql+psycopg2://postgres:postgres@db:5432/havirkesht"
 
 engine = create_engine(
     DATABASE_URL,

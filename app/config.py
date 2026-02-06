@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from .db import create_db_and_tables, SessionLocal, seed_roles
-from .routes import (
+from app.db import create_db_and_tables, SessionLocal, seed_roles
+from app.routes import (
     provinces,
     cities,
     villages,
