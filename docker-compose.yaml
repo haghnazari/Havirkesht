@@ -1,7 +1,10 @@
+version: "3.9"
+
 services:
   api:
     build: .
     container_name: havirkesht_api
+    restart: always
     ports:
       - "8000:8000"
     env_file:
@@ -12,14 +15,14 @@ services:
   db:
     image: postgres:15
     container_name: havirkesht_db
+    restart: always
     environment:
       POSTGRES_DB: havirkesht
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
 
 volumes:
   postgres_data:
+
