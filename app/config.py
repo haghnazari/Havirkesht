@@ -21,9 +21,9 @@ app = FastAPI(
     title="Havirkesht", description="Havirkesht: choghandar project!", version="0.0.1"
 )
 
-# @app.get("/ping")
-# async def ping():
-#     return {"status": "ok"}
+@app.get("/")
+def root():
+    return {"status": "ok"}
 
 
 @app.on_event("startup")
