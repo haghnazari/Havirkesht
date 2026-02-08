@@ -10,17 +10,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ دریافت کد از GitHub
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.0.3
+      # 2️⃣ فعال‌سازی SSH با کلید خصوصی ذخیره‌شده در Secrets
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.8.1
         with:
-          host: 171.22.26.38
-          username: root
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      # 3️⃣ اجرای دستورات روی سرور
+      - name: Deploy to Server
+        run: |
+          echo "Deploy started on server..."
+          ssh -o StrictHostKeyChecking=no root@171.22.26.38 '
             cd /opt/Havirkesht
             git pull origin main
             docker compose down
             docker compose up -d --build
+          '
+          echo "Deploy finished successfully!"
