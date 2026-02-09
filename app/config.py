@@ -13,7 +13,7 @@ from app.routes import (
     pesticides,
     factory_pesticides,
     cars,
-    drivers
+    drivers,
 )
 
 
@@ -21,9 +21,11 @@ app = FastAPI(
     title="Havirkesht", description="Havirkesht: choghandar project!", version="0.0.1"
 )
 
+
 @app.get("/")
 def root():
-    return "Havirkesht\nAdvanced Database Project: LU 1404-1 \nپروژه پایانی درس پایگاه داده پیشرفت\nسعید حق نظری "
+    return {"Project Name": "Havirkesht", "Author": "سعید حق نظری"}
+
 
 @app.get("/test")
 def root():
