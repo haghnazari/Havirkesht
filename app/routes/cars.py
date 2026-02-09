@@ -11,7 +11,7 @@ from ..schemas.cars import (
 )
 from ..schemas.pagination import Page, paginate
 
-router = APIRouter(prefix="/cars", tags=["Cars"])
+router = APIRouter(prefix="/cars", tags=["Car"])
 
 
 @router.post("/", response_model=CarResponse, status_code=201)
