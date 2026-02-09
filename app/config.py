@@ -21,6 +21,10 @@ app = FastAPI(
     title="Havirkesht", description="Havirkesht: choghandar project!", version="0.0.1"
 )
 
+@app.get("/")
+def root():
+    return "Havirkesht\nAdvanced Database Project: LU 1404-1 \nپروژه پایانی درس پایگاه داده پیشرفت\nسعید حق نظری "
+
 @app.get("/test")
 def root():
     return {"status": "ok"}
