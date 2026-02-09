@@ -21,7 +21,7 @@ app = FastAPI(
     title="Havirkesht", description="Havirkesht: choghandar project!", version="0.0.1"
 )
 
-@app.get("/bing")
+@app.get("/test")
 def root():
     return {"status": "ok"}
 
