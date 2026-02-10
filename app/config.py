@@ -22,9 +22,7 @@ app = FastAPI(
 )
 
 
-@app.get("/")
-def root():
-    return {"Project Name": "Havirkesht", "Author": "سعید حق نظری"}
+
 
 
 @app.get("/test")
